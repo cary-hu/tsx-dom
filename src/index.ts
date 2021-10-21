@@ -62,7 +62,7 @@ export function h(
 
         for (const name of Object.keys(attrs)) {
             const value = attrs[name];
-            if (name.startsWith("on")) {
+            if (name.match(/^on/)) {
                 const finalName = name.replace(/Capture$/, "");
                 const useCapture = name !== finalName;
                 const eventName = finalName.toLowerCase().substring(2);
